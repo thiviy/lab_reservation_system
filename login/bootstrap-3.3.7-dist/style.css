@@ -1,0 +1,79 @@
+    *{
+    margin: 0px;
+    padding:0px;
+}
+
+body{
+    font-size: 120%;
+    background:#3498db;
+}
+
+
+.he{
+    width: 30%;
+    margin:50px auto 0px;
+    color: white;
+    background:#7f8c8d;
+    text-align: center;
+    border: 1px solid #7f8c8d;
+    border-bottom: none;
+    border-radius: 10px 10px 0px 0px;
+    padding: 20px;	
+	font-family: monospace;
+}
+form{
+width:30%;
+margin:0px auto;
+padding:20px;
+border:1px solid gray ;
+background:white;
+border-radius:0px 0px 10px 10px;
+color:black;
+}
+
+.input-group{
+	margin: 10px 0px 10px 0px;
+	
+}
+
+.input-group label{
+display:block;
+text-align:center;
+margin:5px;
+font-size: 16px;
+font-family: monospace;
+
+
+}
+.input-group input{
+height:30px;
+width:50%;
+font-size:20px;
+border-radius:1px;
+border:1px solid gray;
+border-radius:5px;
+font-family: monospace;
+
+}
+
+.btn{
+padding:5px;
+font-size:10px;
+color: white;
+background:#7f8c8d;
+border:none;
+border-radius:5px;
+margin:5px;
+font-family: monospace;
+}
+
+
+.dropdown-menu{
+	background:#2980b9;
+	color: blueviolet;
+}
+.THANU{
+	background-color: red;
+	align-content: flex-start;
+}
+
