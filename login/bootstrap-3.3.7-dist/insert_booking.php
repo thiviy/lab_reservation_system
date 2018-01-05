@@ -1,7 +1,6 @@
 
 <?php
 
-
 if(isset($_POST["create"]))
 
 {   
@@ -13,10 +12,10 @@ if(isset($_POST["create"]))
     $student= $_POST['no_of_students'];
 	$subject =$_POST['subject'];
     $year = $_POST['year'];
-	$module = $_POST['module'];
+	$module = $_POST['module_code'];
 	
 
-    $mysql="INSERT INTO `reservation` (`resource`, `begin`, `end`, `no_of_students`, `subject`, `year`, `module`) 
+    $mysql="INSERT INTO `reservation` (`resource`, `begin`, `end`, `no_of_students`, `subject`, `year`, `module_code`) 
 	VALUES ('$resource', '$begin', '$end', '$student', '$subject', '$year', '$module');";
 	
         if(mysqli_query($con,$mysql))
@@ -56,8 +55,8 @@ if(isset($_POST["create"]))
 <label for ="resource">no of students : </label>    <input type="number" name="no_of_students"><br>
 <label for ="resource">subject :</label>            <input type="text" name="subject" ><br>
 <label for ="resource">year:</label>                 <input type="number" name="year" ><br>
-<label for ="resource">module :</label>              <input type="text" name="module" ><br>
- <input type="submit" name="create"  value="create"> <input type="submit" value="cancel">
+<label for ="resource">module code :</label>              <input type="text" name="module_code" ><br>
+ <input type="submit" name="create"  value="create"> <input type="button" name="cancel" value="cancel" onClick="window.location='ta.php';" />
           
         
              

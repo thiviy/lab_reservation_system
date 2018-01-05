@@ -1,25 +1,72 @@
-
-	<?php
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-* {box-sizing:border-box}
-body {font-family: Verdana,sans-serif;}
-.mySlides {display:none}
-
-
-.slideshow-container {
-  max-width: 1500px;
-  position: relative;
-  margin: auto;
+	
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#3498db;
 }
 
+li {
+    float: left;
+}
 
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color:red;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+	
+	.thanu	{
+		color: darkviolet;
+		text-align: right;
+		float: right: 33px;
+		
+	}
+	
+	* {box-sizing:border-box}
+body {font-family: Verdana,sans-serif;}
+.mySlides {display:none}
+	
+	
 .text {
   color: #f2f2f2;
   font-size: 15px;
@@ -29,6 +76,36 @@ body {font-family: Verdana,sans-serif;}
   width: 100%;
   text-align: center;
 }
+.active {
+  background-color: #717171;
+
+/*
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: ;
+}
+
+	
+	
+	
+
+
+
+.slideshow-container {
+  max-width: 1500px;
+  position: relative;
+  margin: auto;
+}
+
+
+
 
 
 .numbertext {
@@ -50,11 +127,10 @@ body {font-family: Verdana,sans-serif;}
   transition: background-color 0.6s ease;
 }
 
-.active {
-  background-color: #717171;
-}
 
-/* Fading animation */
+}*/
+/*
+ Fading animation 
 .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
@@ -76,26 +152,40 @@ body {font-family: Verdana,sans-serif;}
 @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
 }
+	*/
 </style>
 </head>
 <body>
+	<header>
+<ul>
+	<li><a href="">Dashboard</a></li>
+  <li><a href="th.php">Home</a></li>
+   <li><a href="ta.php">Reservation</a></li>
+	<li><a href="">users</a></li>
+	<li><a href="resource_table.php">Resource</a></li>
+	
 
-<div class="slideshow-container">
+	
+  <li style="float:right"><a class="active" href="index.php">Logout</a></li>
+  
+</ul></header>
+
+<!--<div class="slideshow-container">
 
 <div class="mySlides fade">
-<!--  <div class="numbertext">1 / 3</div>-->
+  <div class="numbertext">1 / 3</div>
   <img src="3.jpg" style="width:100%">
   <div class="text">Department 1 </div>
 </div>
 
 <div class="mySlides fade">
-<!--  <div class="numbertext">2 / 3</div>-->
+  <div class="numbertext">2 / 3</div>
   <img src="2.jpg" style="width:100%">
   <div class="text">Department 2 </div>
 </div>
 
 <div class="mySlides fade">
-<!--  <div class="numbertext">3 / 3</div>-->
+  <div class="numbertext">3 / 3</div>
   <img src="1.png" style="width:100%">
   <div class="text">Department 3</div>
 </div>
@@ -107,10 +197,10 @@ body {font-family: Verdana,sans-serif;}
   <span class="dot"></span> 
   <span class="dot"></span> 
   <span class="dot"></span> 
-</div>
+</div>-->
 
 <script>
-var slideIndex = 0;
+/*var slideIndex = 0;
 showSlides();
 
 function showSlides() {
@@ -128,8 +218,8 @@ function showSlides() {
     slides[slideIndex-1].style.display = "block";  
     dots[slideIndex-1].className += " active";
     setTimeout(showSlides, 2000); // Change image every 2 seconds
-}
+}*/
 </script>
 
 </body>
-</html> 
+</html>

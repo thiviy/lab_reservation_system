@@ -2,15 +2,14 @@
 
 
 <?php
-
 include_once("config.php");
 
-if(isset($_GET["id"]))
+if(isset($_GET["reserv_id"]))
 {  
-$id=$_GET["id"];
+$id=$_GET["reserv_id"];
 	
- $id=$resource=$begin=$end=$student=$subject=$year=$module=null;
-$mysql= "SELECT * FROM reservation where id='$id'";
+$resource=$begin=$end=$student=$subject=$year=$module=null;
+$mysql= "SELECT * FROM reservation where reserv_id='$id'";
 $result=mysqli_query($con,$mysql);
     if(mysqli_num_rows($result)>0)
     {
@@ -23,7 +22,7 @@ $result=mysqli_query($con,$mysql);
 			$student=$row["no_of_students"];
 			$subject=$row["subject"];
 			$year=$row["year"];
-			$module=$row["module"];
+			$module=$row["module_code"];
 			
             
         }
@@ -45,13 +44,14 @@ if(isset($_POST["update"])){
     $student= $_POST['no_of_students'];
 	$subject =$_POST['subject'];
     $year = $_POST['year'];
-	$module = $_POST['module'];
+	$module = $_POST['module_code'];
    
     
 include_once("config.php");
     
-$mysql="UPDATE `reservation` SET `resource` = '$resource',`begin` = '$begin',`end` = '$end',`no_of_students` = '$student',`subject` = '$subject',`year` = '$year',`module` = '$module' WHERE `reservation`.`resource`='$resource'";
+$mysql="UPDATE `reservation` SET `resource` = '$resource',`begin` = '$begin',`end` = '$end',`no_of_students` = '$student',`subject` = '$subject',`year` = '$year',`module_code` = '$module' WHERE `reservation`.`reserv_id`='$id'";
 
+	echo "$mysql";
 
 if(mysqli_query($con,$mysql)){
     echo "table value update successfully";
@@ -68,20 +68,20 @@ else{
 
 </head>
 <body >
-<form action="#" method="post">
+<form action="" method="post">
 				<pre>
 				     
 
 
 <fieldset><legend> update reservation</legend>	
 
-<label for ="resource">Resource :</label>           <input type="text"name="resource"><br><br>
-<label for ="begin"> begin:</label>              <input type="datetime-local"name="begin"> <label for ="resource">end :</label><input type="datetime-local"name="end"> <br>
-<label for ="resource">no of students : </label>    <input type="number" name="no_of_students"><br>
-<label for ="resource">subject :</label>            <input type="text" name="subject" ><br>
-<label for ="resource">year:</label>                 <input type="number" name="year" ><br>
-<label for ="resource">module :</label>              <input type="text" name="module" ><br>
- <input type="submit" name="update"  value="update"> <input type="submit" value="cancel">
+<label for ="resource">Resource :</label>           <input type="text"name="resource" value='<?php echo "$resource"?>'><br><br>
+<label for ="begin"> begin:</label>              <input type="datetime-local"name="begin" value='<?php echo substr($begin,0,10)."T".substr($begin,11)?>'> <label for ="resource">end :</label><input type="datetime-local" name="end" value='<?php echo substr($end,0,10)."T".substr($end,11)?>'> <br>
+<label for ="resource" >no of students : </label>    <input type="number" name="no_of_students" value='<?php echo "$student" ?>'><br>
+<label for ="resource">subject :</label>            <input type="text" name="subject" value='<?php echo "$subject" ?>'><br>
+<label for ="resource">year:</label>                 <input type="number" name="year" value='<?php echo "$year" ?>'><br>
+<label for ="resource">module code :</label>              <input type="text" name="module_code" value='<?php echo "$module" ?>'><br>
+ <input type="submit" name="update"  value="update"> <input type="button" name="cancel" value="cancel" onClick="window.location='ta.php';" />
           
         
              

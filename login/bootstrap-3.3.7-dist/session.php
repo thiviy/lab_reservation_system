@@ -2,16 +2,15 @@
 require_once "Role.php";
 require_once "PrivilegedUser.php";
 
-// connect to database...
-// ...
+include_once("config.php");
 
 session_start();
 
-if (isset($_SESSION["loggedin"])) {
-    $u = PrivilegedUser::getByUsername($_SESSION["loggedin"]);
+if (isset($_SESSION["login"])) {
+    $u = PrivilegedUser::getByUsername($_SESSION["login"]);
 }
 
 if ($u->hasPrivilege("thisPermission")) {
-    // do something
+echo "hi";
 }
 ?>

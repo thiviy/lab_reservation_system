@@ -2,10 +2,10 @@
 
 include_once("config.php");
 
-if(isset($_GET["reserv_id"])){
-    $id=$_GET["reserv_id"];
+if(isset($_GET["re_id"])){
+    $id=$_GET["re_id"];
     
-$sql ="DELETE FROM reservation WHERE reserv_id=$id";
+$sql ="DELETE FROM resource WHERE re_id='$id'";
 
 if(mysqli_query($con,$sql)){
     echo "Record Deleted Successfully";

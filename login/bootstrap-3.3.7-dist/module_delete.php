@@ -1,10 +1,11 @@
 <?php
+
 include_once("config.php");
 
-if(isset($_GET["Dep_Id"])){
-    $Dep_Id=$_GET["Dep_Id"];
+if(isset($_GET["module_code"])){
+    $code=$_GET["module_code"];
     
-$sql ="DELETE FROM department WHERE Dep_Id=$Dep_Id";
+$sql ="DELETE FROM module WHERE module_code='$code'";
 
 if(mysqli_query($con,$sql)){
     echo "Record Deleted Successfully";

@@ -12,7 +12,7 @@ if(mysqli_connect_errno())
 }
 else
 {
-  /* echo "connection Successfully";*/
+   /*echo "connection Successfully";*/
     
 }
 
